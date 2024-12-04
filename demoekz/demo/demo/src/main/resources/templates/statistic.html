@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table>
+        <tr th:each="type_of_equipment: ${type_of_equipments}">
+            <th>Тип проблемы</th>
+            <th>Количество</th>
+        </tr>
+        <tr th:each="type_of_equipment: ${type_of_equipments.keySet()}">
+            <td th:text="${type_of_equipment}"></td>
+            <td th:text="${type_of_equipment[type_of_equipment]}"></td>
+        </tr>
+    </table>
+    <h1>Среднее время выполнения по дням:</h1><br>
+    <h3 th:text="delta_day"></h3>
+    <h1>Количество выполненных заявок:</h1><br>
+    <h3 th:text="statistic_count"></h3>
+</body>
+</html>

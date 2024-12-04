@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  <h1 th:text="${message}"></h1>
+<form th:each = "order: ${order}" method="post">
+  <label>Логин</label>
+  <input placeholder="Логин" type="text" id="login" name="login"></input>
+
+  <label>Пароль</label>
+  <input placeholder="Пароль" type="text" id="password" name="password"></input>
+
+  <label>Выберите роль</label>
+  <select size="3" multiple name="role" id="role">
+    <option disabled>Выберите роль</option>
+    <option value="User">User</option>
+    <option selected value="Admin">Admin</option>
+    <option value="Worker">Worker</option>
+  </select>
+
+</form>
+</body>
+</html>

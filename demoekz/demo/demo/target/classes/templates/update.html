@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  <h1 th:text="${message}"></h1>
+<form th:each = "order: ${order}" method="post">
+  <label>Введите фио</label>
+  <input placeholder="ФИО" type="text" id="fio" name="fio"></input>
+
+  <label>Введите тип проблемы</label>
+  <input placeholder="тип проблемы" type="text" id="type_of_fault" name="type_of_fault"></input>
+
+  <label>Введите имя мастера</label>
+  <input placeholder="имя мастера" type="text" id="master" name="master"></input>
+
+  <label>Выберите статус</label>
+  <select size="3" multiple name="status" id="status">
+    <option disabled>Выберите статус</option>
+    <option value="Выполнено">Выполнено</option>
+    <option selected value="В процессе">В процессе</option>
+    <option value="Поиск мастера">Поиск мастера</option>
+    <option value="Поиск деталей">Поиск деталей</option>
+  </select>
+
+  <label>Введите описание проблемы</label>
+  <input placeholder="описание проблемы" type="text" id="desc_problem" name="desc_problem"></input>
+
+  <label>Дата заявки</label>
+  <input type="date" id="date_start" name="date_start"></input>
+
+  <label>Дата окончания заявки</label>
+  <input type="date" id="date_end" name="date_end"></input>
+</form>
+</body>
+</html>

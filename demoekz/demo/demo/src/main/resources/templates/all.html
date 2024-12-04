@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1 th:text="${message}"></h1>
+    <form method="get">
+        <input type="text" id="id" name="id" placeholder="Введите id">
+        <button type="submit"> Найти </button>
+    </form>
+    <table>
+        <tr>
+            <th>ФИО</th>
+            <th>тип проблемы</th>
+            <th>мастер</th>
+            <th>статус</th>
+            <th>описание проблемы</th>
+            <th>дата заявки</th>
+            <th>дата окончания заявки</th>
+        </tr>
+        <tr th:each="order: ${orders}">
+            <td th:text="${order.number}"></td>
+            <td th:text="${order.fio}"></td>
+            <td th:text="${order.type_of_fault}"></td>
+            <td th:text="${order.master}"></td>
+            <td th:text="${order.status}"></td>
+            <td th:text="${order.description_problem}"></td>
+            <td th:text="${order.date_start}"></td>
+            <td th:text="${order.date_end}"></td>
+            <td> <a th:href="/update/ + ${order.id}">Редактировать</a></td>
+            <td> <a th:href="/delete/ + ${order.id}">Редактировать</a></td>
+        </tr>
+    </table>
+</body>
+</html>

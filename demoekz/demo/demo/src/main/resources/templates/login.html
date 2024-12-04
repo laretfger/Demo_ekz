@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  <h1 th:text="${message}"></h1>
+<form th:each = "order: ${order}" method="post">
+  <label>Введите логин</label>
+  <input placeholder="Логин" type="text" id="login" name="login"></input>
+
+  <label>Введите пароль</label>
+  <input placeholder="Пароль" type="text" id="password" name="password"></input>
+
+</form>
+</body>
+</html>
